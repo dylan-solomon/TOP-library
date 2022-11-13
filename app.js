@@ -4,7 +4,7 @@ const btn = document.getElementById('btn-add');
 const push = document.getElementsByClassName('btn-push')[0]
 const close = document.getElementsByClassName('close')[0];
 const form = document.getElementsByClassName('modal-content')[0]
-
+let myLibrary = [];
 
 btn.addEventListener('click', modalPopup);
 close.addEventListener('click', modalPopup);
@@ -26,33 +26,10 @@ function modalClose(e) {
     }
 }
 
-
-
-const theHobbit = new Book('The Hobbit', 'JR Tolkien', true)
-const theBible = new Book('The Bible', 'god', false)
-
-let myLibrary = [theHobbit, theBible];
-
 function Book(title, author, read) {
     this.title = title
     this.author = author
     this.read = read
-}
-
-function initialLibrary() {
-    for(let i = 0; i <myLibrary.length; i++){
-        let row = document.createElement('tr')
-        let title = document.createElement('td')
-        let author = document.createElement('td')
-        let read = document.createElement('td')
-        title.innerText = `${myLibrary[i].title}`
-        author.innerText = `${myLibrary[i].author}`
-        read.innerText = `${myLibrary[i].read}`
-        row.appendChild(title)
-        row.appendChild(author)
-        row.appendChild(read)
-        tBody.appendChild(row)
-    }
 }
 
 function addToLibrary() {
@@ -70,11 +47,13 @@ function addToLibrary() {
 }
 
 function pushToLibrary(e) {
-    e.preventDefault()
-    myLibrary[myLibrary.length] = new Book(form.title.value, form.author.value, form.read.value)
-    addToLibrary()
-    hideModal()
-    form.reset()  
+    if(form.checkValidity()){
+        e.preventDefault()
+        myLibrary[myLibrary.length] = new Book(form.title.value, form.author.value, form.read.value);
+        addToLibrary()
+        hideModal()
+        form.reset()
+    }
 }
 
 function hideModal() {
@@ -82,4 +61,21 @@ function hideModal() {
     modal.classList.toggle('none')
 }
 
-initialLibrary()
+
+// function initialLibrary() {
+//     for(let i = 0; i <myLibrary.length; i++){
+//         let row = document.createElement('tr')
+//         let title = document.createElement('td')
+//         let author = document.createElement('td')
+//         let read = document.createElement('td')
+//         title.innerText = `${myLibrary[i].title}`
+//         author.innerText = `${myLibrary[i].author}`
+//         read.innerText = `${myLibrary[i].read}`
+//         row.appendChild(title)
+//         row.appendChild(author)
+//         row.appendChild(read)
+//         tBody.appendChild(row)
+//     }
+// }
+
+// initialLibrary()
