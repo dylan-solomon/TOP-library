@@ -1,19 +1,27 @@
 const tBody = document.getElementById('tbody');
 const modal = document.getElementById('modal-container');
 const btn = document.getElementById('btn-add');
+const push = document.getElementsByClassName('btn-push')[0]
 const close = document.getElementsByClassName('close')[0];
 
-btn.onclick = function(){
-    modal.style.display = 'block'
+btn.addEventListener('click', modalPopup);
+close.addEventListener('click', modalPopup);
+window.addEventListener('click', modalClose)
+
+function modalPopup(){
+    if(modal.classList.contains('none')){
+        modal.classList.toggle('none');
+        modal.style.display = 'block';
+    } else {
+        modal.style.display = 'none';
+        modal.classList.toggle('none');
+    }
 }
 
-close.onclick = function() {
-    modal.style.display = 'none'
-}
-
-window.onclick = function(e) {
+function modalClose(e) {
     if(e.target == modal) {
         modal.style.display = 'none';
+        modal.classList.toggle('none')
     }
 }
 

@@ -24,7 +24,7 @@
 
     <button name="btn-add" class="btn-add" id="btn-add">Add Book to Library</button>
 
-    <div class="modal-container" id="modal-container">
+    <div class="modal-container none" id="modal-container">
         <form action="submit" class="modal-content">
             <span class="close">&times;</span>
             <div>Add a book to your library</div>
@@ -41,10 +41,11 @@
             
             <div class="section">
                 <label for="read">Read?</label>
-                <input type="text" name="read" id="read">
+                <input type="radio" name="read" id="true" value="true">True
+                <input type="radio" name="read" id="false" value="false">False
             </div>
 
-            <button>Add book</button>
+            <button class="btn-push">Add book</button>
         </form>
     </div>
     
