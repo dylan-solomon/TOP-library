@@ -3,7 +3,9 @@ const modal = document.getElementById('modal-container');
 const btn = document.getElementById('btn-add');
 const push = document.getElementsByClassName('btn-push')[0]
 const close = document.getElementsByClassName('close')[0];
-const form = document.getElementsByClassName('modal-content')[0]
+const form = document.getElementsByClassName('modal-content')[0];
+
+
 let myLibrary = [];
 
 btn.addEventListener('click', modalPopup);
@@ -37,12 +39,22 @@ function addToLibrary() {
     let title = document.createElement('td')
     let author = document.createElement('td')
     let read = document.createElement('td')
+    let hasRead = document.createElement('input')
+    hasRead.setAttribute('type', 'checkbox');
+
     title.innerText = `${myLibrary[myLibrary.length-1].title}`
     author.innerText = `${myLibrary[myLibrary.length-1].author}`
-    read.innerText = `${myLibrary[myLibrary.length-1].read}`
     row.appendChild(title)
     row.appendChild(author)
-    row.appendChild(read)
+
+    if(`${myLibrary[myLibrary.length-1].read}` == 'true'){
+        hasRead.setAttribute('checked', 'true')
+        row.appendChild(hasRead)
+    } else {
+
+        row.appendChild(hasRead)
+    }
+
     tBody.appendChild(row)
 }
 
