@@ -22,7 +22,31 @@
         </tbody>
     </table>
 
-    <button>Add Book to Library</button>
+    <button name="btn-add" class="btn-add" id="btn-add">Add Book to Library</button>
+
+    <div class="modal-container" id="modal-container">
+        <form action="submit" class="modal-content">
+            <span class="close">&times;</span>
+            <div>Add a book to your library</div>
+            
+            <div class="section">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title">
+            </div>
+
+            <div class="section">
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author">
+            </div>
+            
+            <div class="section">
+                <label for="read">Read?</label>
+                <input type="text" name="read" id="read">
+            </div>
+
+            <button>Add book</button>
+        </form>
+    </div>
     
 </body>
 </html>

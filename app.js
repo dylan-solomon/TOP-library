@@ -1,5 +1,22 @@
-const table = document.getElementById('table');
 const tBody = document.getElementById('tbody');
+const modal = document.getElementById('modal-container');
+const btn = document.getElementById('btn-add');
+const close = document.getElementsByClassName('close')[0];
+
+btn.onclick = function(){
+    modal.style.display = 'block'
+}
+
+close.onclick = function() {
+    modal.style.display = 'none'
+}
+
+window.onclick = function(e) {
+    if(e.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
 
 
 const theHobbit = new Book('The Hobbit', 'JR Tolkien', true)
