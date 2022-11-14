@@ -9,8 +9,15 @@
     <title>TOP Library App</title>
 </head>
 <body>
+    <header>
+        <h1>Welcome to my Library App</h1>
+    </header>
     <table id="table">
         <thead>
+            <legend>
+                <h3>My books</h3>
+                <button name="btn-add" class="btn-add" id="btn-add">+ Add Book to Library</button>
+            </legend>
             <tr>
                 <th>Title</th>
                 <th>Author</th>
@@ -23,12 +30,10 @@
         </tbody>
     </table>
 
-    <button name="btn-add" class="btn-add" id="btn-add">Add Book to Library</button>
-
     <div class="modal-container none" id="modal-container">
         <form action="submit" class="modal-content">
             <span class="close">&times;</span>
-            <div>Add a book to your library</div>
+            <p>Add a book to your library</p>
             
             <div class="section">
                 <label for="title">Title</label>
@@ -41,9 +46,9 @@
             </div>
             
             <div class="section">
-                <div>Have you read this book?</div>
-                <input type="radio" name="read" id="true" value="true" required><label for="true">I've read this book</label>
-                <input type="radio" name="read" id="false" value="false"><label for="false">I haven't read this book</label>
+                <label for="true"><input type="radio" name="read" id="true" value="true" required>I've read this book</label> <br>
+
+                <label for="false"><input type="radio" name="read" id="false" value="false">I haven't read this book</label>
             </div>
 
             <input type="submit" class="btn-push"/>

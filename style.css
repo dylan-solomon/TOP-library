@@ -2,7 +2,62 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+header {
+    width: 100%;
+    background-color: #aaa;
+    padding: 2rem;
+    box-shadow: 3px 5px 5px rgb(114, 114, 114);
+    margin-bottom: 2rem;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+table {
+    margin:auto;
+    width: 80%;
+}
+
+legend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3 {
+    padding: 1rem;
+}
+
+legend button {
+    margin-bottom:1rem;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+legend button:hover,
+legend button:active {
+    background-color: #aaa;
+}
+
+
+
+tr:first-of-type {
+    height: 2rem;
+    background-color: #aaa;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 
 .modal-container {
     display: none;
@@ -14,7 +69,6 @@
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,.3);
 }
 
@@ -23,15 +77,20 @@
     margin: auto;
     padding: 2rem;
     border: 1px solid black;
-    width: 80%;
+    width: 25%;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: 3px 5px 5px rgb(114, 114, 114);
+    position: relative;
 }
 
 .close {
     color: #aaa;
-    float: right;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 0;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;  
 }
 
 .close:hover,
@@ -39,4 +98,53 @@
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+form p {
+    margin-bottom: 1rem;
+}
+
+form div {
+    margin-bottom: 1rem;
+}
+
+form label {
+    cursor: pointer;
+}
+
+#title,
+#author {
+    width: fit-content;
+    background-color: #fefefe;
+    border-radius: 12px;
+    border: 1px solid black;
+    height: 1.2rem;
+    margin-left: 5px;
+}
+
+#title {
+    margin-left: 1.3rem;
+}
+
+input[type='radio'] {
+    margin: 10px;
+}
+
+.btn-push {
+    padding: .5rem;
+    border-radius: 14px;
+    border: 1px solid black;
+    cursor: pointer;
+    position:static;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+.btn-push:hover {
+    background-color: rgb(130, 130, 130);
+    color: white;
+    border: 1px solid rgb(130,130,130)
+    
 }
