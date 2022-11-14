@@ -6,6 +6,7 @@ const push = document.getElementsByClassName('btn-push')[0]
 const close = document.getElementsByClassName('close')[0];
 const form = document.getElementsByClassName('modal-content')[0];
 const remove = document.querySelectorAll('.delete');
+const rows = tBody.querySelectorAll('tr')
 
 
 let myLibrary = [];
@@ -60,7 +61,7 @@ function addToLibrary() {
     row.appendChild(title)
     row.appendChild(author)
 
-    del.classList.add(`${title.innerText}`)
+    //del.classList.add(`${title.innerText}`)
     if(`${myLibrary[myLibrary.length-1].read}` == 'true'){
         hasRead.setAttribute('checked', 'true');
         read.appendChild(hasRead)
@@ -93,27 +94,31 @@ function hideModal() {
 }
 
 function deleteBook(e){
-    myLibrary.splice((e.target.classList[1])-1,1);
-     resetTable()
+    let rowJ = e.target.parentElement.parentElement;
+    rowJ.classList.add(`${rowJ.rowIndex}`)
+    let rowIndex = rowJ.classList[0]
+    myLibrary.splice(Number(rowIndex)-1,1);
+
+    // let row = e.target.classList[1]-1
+    // myLibrary.splice((e.target.classList[1])-1,1);
+    //  resetTable()
      
     // initialLibrary()
 }
 
 
-function initialLibrary() {
-    for(let i = 0; i <myLibrary.length; i++){
-        addToLibrary()
-        console.log(myLibrary)
-    }
-}
+// function initialLibrary() {
+//     for(let i = 0; i <myLibrary.length; i++){
+//         addToLibrary()
+//         console.log(myLibrary)
+//     }
+// }
 
 
 
-function resetTable(){
-    let rowCount = table.rows.length;
-    for(let i = rowCount - 1; i > 0; i--){
-        table.deleteRow(i)
-    }
-
-
-}
+// function resetTable(){
+//     let rowCount = table.rows.length;
+//     for(let i = rowCount - 1; i > 0; i--){
+//         table.deleteRow(i)
+//     }
+// }
